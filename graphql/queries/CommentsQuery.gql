@@ -1,0 +1,15 @@
+query CommentsQuery($topLevelCommentsWhere: recommendation_comments_bool_exp!, $limit: Int!, $offset: Int!) {
+  comments: recommendation_comments(
+    limit: $limit
+    offset: $offset
+    where: $topLevelCommentsWhere
+    order_by: [{publishedAt: asc}, {id: asc}]
+  ) {
+    id
+    content
+    createdAt
+    profile {
+      username
+    }  
+  }
+}
