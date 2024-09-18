@@ -1,0 +1,81 @@
+{
+    "data": {
+        "setFollow": {
+            "__typename": "setFollowOutput",
+            "profile": {
+                "__typename": "profiles",
+                "bAt": null,
+                "badge": null,
+                "ccProfiles": [],
+                "coverImage": null,
+                "createdAt": "2024-07-04T06:21:08.135283+00:00",
+                "credLevel": 2,
+                "description": "My name Is Muhammad Tariq",
+                "discord": "",
+                "facebook": "Muhammadtariq",
+                "farcasterProfile": {
+                    "__typename": "farcaster_profiles",
+                    "displayName": "Muhammad Tariq",
+                    "isUserFollowing": true,
+                    "name": "kiswa7",
+                    "tokenId": "776856"
+                },
+                "id": "hTW04UOZZ8gk9jFoPJ2YOJF8TRu2",
+                "image": {
+                    "__typename": "images",
+                    "blurhash": "UjJkG;yXLN%NI;ROogRkEgxts:jYtRR*tRof",
+                    "bucket": "phaver-assets",
+                    "contentType": "image/jpeg",
+                    "createdAt": "2024-07-28T09:50:43.852078+00:00",
+                    "filename": "697e66b9c6926feaa317e7c374fca831",
+                    "height": 1440,
+                    "id": "d801529d-ecfd-4aab-aea0-37213bb3a02b",
+                    "pages": null,
+                    "profileId": "hTW04UOZZ8gk9jFoPJ2YOJF8TRu2",
+                    "size": 84267,
+                    "sourceUrl": null,
+                    "status": "fulfilled",
+                    "updatedAt": "2024-07-28T09:50:43.852078+00:00",
+                    "width": 1440
+                },
+                "instagram": "",
+                "isUserFollowing": false,
+                "lensProfile": {
+                    "__typename": "lens_profiles",
+                    "followModule": "0x0000000000000000000000000000000000000000",
+                    "id": "03e489d8-e12d-4238-889b-0db69e95ba4f",
+                    "image": null,
+                    "isFollowPending": false,
+                    "isUserFollowing": true,
+                    "lensHandle": "tariqkulachi.lens",
+                    "lensProfileId": "447518",
+                    "ownerAddress": "0x13DEa33b7012AFaeF2d0A710E70Ab9DFC4C2768E",
+                    "status": "fulfilled",
+                    "txId": null
+                },
+                "linkedin": "",
+                "name": "Muhammad Tariq kulachi",
+                "nft": null,
+                "pinterest": "",
+                "profileAggregates": {
+                    "__typename": "profile_aggregates",
+                    "followerCount": 135,
+                    "followingCount": 220
+                },
+                "snapchat": "",
+                "telegram": "Tariqkulachi",
+                "tiktok": "",
+                "timeoutUntil": null,
+                "twitter": "Muhammadtariq",
+                "updatedAt": "2024-08-25T04:19:37.169581+00:00",
+                "username": "kiswa7",
+                "verification": null,
+                "website": "",
+                "xmtpWallet": "0x13dea33b7012afaef2d0a710e70ab9dfc4c2768e",
+                "youtube": ""
+            },
+            "profileId": "hTW04UOZZ8gk9jFoPJ2YOJF8TRu2",
+            "status": "ok"
+        }
+    }
+}

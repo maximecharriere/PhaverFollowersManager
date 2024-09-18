@@ -1,0 +1,169 @@
+{
+  "operationName": "FollowUserMutation",
+  "variables": {
+    "followedProfileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+    "followType": "phaver"
+  },
+  "query": "..."
+}
+---
+mutation FollowUserMutation($followedProfileId: String!, $followType: FollowType) {
+  setFollow(profileId: $followedProfileId, follow: true, followType: $followType) {
+    status
+    profileId
+    profile {
+      ...ProfileDetailedFieldsFragment
+      __typename
+    }
+    lensQuota {
+      ...QuotaFollowsFieldsFragment
+      __typename
+    }
+    phaverQuota {
+      ...QuotaFollowsFieldsFragment
+      __typename
+    }
+    farcasterQuota {
+      ...QuotaFollowsFieldsFragment
+      __typename
+    }
+    __typename
+  }
+}
+fragment ImageFieldsFragment on images {
+  id
+  profileId
+  size
+  bucket
+  createdAt
+  updatedAt
+  filename
+  width
+  height
+  blurhash
+  contentType
+  pages
+  sourceUrl
+  status
+  __typename
+}
+fragment LensProfileFieldsFragment on lens_profiles {
+  id
+  lensProfileId
+  lensHandle
+  status
+  txId
+  ownerAddress
+  followModule
+  isUserFollowing
+  isFollowPending
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  __typename
+}
+fragment NftFieldsFragment on connected_nfts {
+  id
+  profileId
+  chainId
+  nftName
+  nft_description
+  nftTokenId
+  contractAddress
+  createdAt
+  updatedAt
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  verifiedNftProject {
+    id
+    image {
+      ...ImageFieldsFragment
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+fragment FarcasterProfileFragment on farcaster_profiles {
+  tokenId
+  displayName
+  name
+  isUserFollowing
+  __typename
+}
+fragment ProfileFieldsFragment on profiles {
+  id
+  name
+  username
+  description
+  credLevel
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  createdAt
+  updatedAt
+  lensProfile {
+    ...LensProfileFieldsFragment
+    __typename
+  }
+  timeoutUntil
+  badge
+  verification
+  nft {
+    ...NftFieldsFragment
+    __typename
+  }
+  bAt
+  xmtpWallet
+  farcasterProfile {
+    ...FarcasterProfileFragment
+    __typename
+  }
+  isUserFollowing
+  __typename
+}
+fragment ProfileSocialMediaFieldsFragment on profiles {
+  instagram
+  facebook
+  youtube
+  twitter
+  pinterest
+  snapchat
+  linkedin
+  tiktok
+  website
+  telegram
+  discord
+  __typename
+}
+fragment ProfileDetailedFieldsFragment on profiles {
+  ...ProfileFieldsFragment
+  ...ProfileSocialMediaFieldsFragment
+  profileAggregates {
+    followerCount
+    followingCount
+    __typename
+  }
+  ccProfiles {
+    id
+    handle
+    __typename
+  }
+  coverImage {
+    ...ImageFieldsFragment
+    __typename
+  }
+  __typename
+}
+fragment QuotaFollowsFieldsFragment on QuotaFollows {
+  quotaType
+  available
+  maximum
+  monthlyAvailable
+  monthlyMaximum
+  __typename
+}

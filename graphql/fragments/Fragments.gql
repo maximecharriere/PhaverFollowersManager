@@ -1,0 +1,40 @@
+fragment LensProfileFieldsFragment on lens_profiles {
+  lensHandle
+  isUserFollowing
+  createdAt
+}
+
+fragment FarcasterProfileFragment on farcaster_profiles {
+  name
+  isUserFollowing
+  createdAt
+}
+
+fragment ProfileFieldsFragment on profiles {
+  id
+  username
+  isUserFollowing
+  createdAt
+  credLevel
+  badge
+  phaverFrens
+  verification
+  verified
+  lensProfile {
+    ...LensProfileFieldsFragment
+  }
+  farcasterProfile {
+    ...FarcasterProfileFragment
+  }
+  profileAggregates {
+    followerCount
+    followingCount
+  }
+}
+
+fragment FollowerFieldsFragment on followers {
+  followedProfile {
+    ...ProfileFieldsFragment
+  }
+  createdAt
+}

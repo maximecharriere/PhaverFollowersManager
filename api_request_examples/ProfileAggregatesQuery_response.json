@@ -1,0 +1,12 @@
+{
+    "data": {
+        "profile": {
+            "__typename": "profiles",
+            "profileAggregates": {
+                "__typename": "profile_aggregates",
+                "followerCount": 2130,
+                "followingCount": 3289
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+{
+    "data": {
+      "following": [
+        {
+          "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+          "profile": {
+            "id": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+            "name": "Maxime Charrière | $SOCIAL",
+            "username": "maximecharriere",
+            "description": "📸 Photographer | 🤖 Engineer | ✳️ Climat Change Warrior | 🇨🇭 Swiss",
+            "credLevel": 4,
+            "image": {
+              "id": "f60b7c3c-64e7-4d9d-9b8c-25c69641fa19",
+              "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+              "size": 171806,
+              "bucket": "phaver-assets",
+              "createdAt": "2024-08-17T01:12:21.171034+00:00",
+              "updatedAt": "2024-08-17T01:12:21.171034+00:00",
+              "filename": "0aacacb51842c703b504ff9eceaea1d1",
+              "width": 1440,
+              "height": 1440,
+              "blurhash": "UABz2,~q004nMxxb%MM{004o-;.7-?axMwfl",
+              "contentType": "image/jpeg",
+              "pages": null,
+              "sourceUrl": null,
+              "status": "fulfilled",
+              "__typename": "images"
+            },
+            "createdAt": "2023-09-02T11:23:09.073087+00:00",
+            "updatedAt": "2024-08-25T09:00:00.531582+00:00",
+            "lensProfile": {
+              "id": "ba26223c-f95a-4479-a15d-50c9a9c9a2e0",
+              "lensProfileId": "125888",
+              "lensHandle": "maximecharriere.lens",
+              "status": "fulfilled",
+              "txId": null,
+              "ownerAddress": "0x705B615dFa5a197Aab0f23799FeE39d8D328E1c0",
+              "followModule": "0x0000000000000000000000000000000000000000",
+              "isUserFollowing": false,
+              "isFollowPending": false,
+              "image": {
+                "id": "ef2efd9f-e1fd-4c51-aca8-482bc5ed7385",
+                "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+                "size": 2426052,
+                "bucket": "phaver-assets",
+                "createdAt": "2023-10-29T15:26:05.210674+00:00",
+                "updatedAt": "2023-10-29T15:35:22.215721+00:00",
+                "filename": "1e2ae5777d790ef3cf3b2246fe77c27b",
+                "width": 460,
+                "height": 569,
+                "blurhash": "UKH243X50x-.04tQtRNH}*s:={od0-R*R+s;",
+                "contentType": "image/jpeg",
+                "pages": null,
+                "sourceUrl": null,
+                "status": "fulfilled",
+                "__typename": "images"
+              },
+              "__typename": "lens_profiles"
+            },
+            "timeoutUntil": null,
+            "badge": null,
+            "verification": null,
+            "nft": {
+              "id": "78d26d39-ba91-4e13-8d99-2503fa8b1f9a",
+              "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+              "chainId": 137,
+              "nftName": "Phaver-Up: Genesis Edition",
+              "nft_description": "The most rewarding NFT in Web3 Social, Phaver-Ups launch the on-chain era of Phaver’s economy.",
+              "nftTokenId": "1332",
+              "contractAddress": "0x86d1ff5a19854865c2a9b3fc22ae49f9b370c3c0",
+              "createdAt": "2024-04-25T19:23:31.723761+00:00",
+              "updatedAt": "2024-04-25T19:23:31.723761+00:00",
+              "image": {
+                "id": "c3a1abb9-c7ab-4383-a261-4b1c7268b31b",
+                "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2",
+                "size": 1467413,
+                "bucket": "phaver-assets",
+                "createdAt": "2024-04-17T16:16:01.768681+00:00",
+                "updatedAt": "2024-04-17T16:16:01.768681+00:00",
+                "filename": "26ad23d9badd857b2338c3ae47cdbf02",
+                "width": 4000,
+                "height": 4000,
+                "blurhash": "UHJk[jw^zTJ5%QkW^*xc.-t8%2rq?tR4MbR%",
+                "contentType": "image/png",
+                "pages": null,
+                "sourceUrl": null,
+                "status": "fulfilled",
+                "__typename": "images"
+              },
+              "verifiedNftProject": {
+                "id": 149,
+                "image": {
+                  "id": "aeb1bfe8-3475-4ebc-ad85-22d2d423e6aa",
+                  "profileId": "0",
+                  "size": 134417,
+                  "bucket": "phaver-assets",
+                  "createdAt": "2024-04-03T15:46:49.542421+00:00",
+                  "updatedAt": "2024-04-03T15:46:49.542421+00:00",
+                  "filename": "df3d74528ef503f293525f8e5efe4b3d",
+                  "width": 1000,
+                  "height": 1000,
+                  "blurhash": "UcM=XRoe$%xY~kj@kBoeV@oKR+WV,@oLRlja",
+                  "contentType": "image/png",
+                  "pages": null,
+                  "sourceUrl": null,
+                  "status": "fulfilled",
+                  "__typename": "images"
+                },
+                "__typename": "verified_nft_projects"
+              },
+              "__typename": "connected_nfts"
+            },
+            "bAt": null,
+            "xmtpWallet": "0x705b615dfa5a197aab0f23799fee39d8d328e1c0",
+            "farcasterProfile": {
+              "tokenId": "475206",
+              "displayName": "Maxime Charrière",
+              "name": "maximecharriere",
+              "isUserFollowing": false,
+              "__typename": "farcaster_profiles"
+            },
+            "isUserFollowing": false,
+            "__typename": "profiles"
+          },
+          "followedProfileId": "b8765336-0313-41e4-9073-bfc4204665aa",
+          "followedProfile": {
+            "id": "b8765336-0313-41e4-9073-bfc4204665aa",
+            "name": "maltietc",
+            "username": "b8765336-0313-41e4-9073-bfc4204665aa",
+            "description": "",
+            "credLevel": 1,
+            "image": null,
+            "createdAt": "2024-07-31T07:29:34.296159+00:00",
+            "updatedAt": "2024-07-31T07:29:34.296159+00:00",
+            "lensProfile": null,
+            "timeoutUntil": null,
+            "badge": null,
+            "verification": null,
+            "nft": null,
+            "bAt": null,
+            "xmtpWallet": null,
+            "farcasterProfile": {
+              "tokenId": "675006",
+              "displayName": "maltietc",
+              "name": "maltietc",
+              "isUserFollowing": true,
+              "__typename": "farcaster_profiles"
+            },
+            "isUserFollowing": true,
+            "__typename": "profiles"
+          },
+          "createdAt": "2024-09-11T07:48:08.425443+00:00",
+          "__typename": "followers"
+        }
+      ]
+    }
+  }
+

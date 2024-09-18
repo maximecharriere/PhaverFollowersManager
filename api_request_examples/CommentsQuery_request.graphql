@@ -1,0 +1,51 @@
+{
+  "operationName": "CommentsQuery",
+  "variables": {
+    "topLevelCommentsWhere": {
+      "publishedAt": {
+        "_lte": "2024-09-18T08:23:31.063Z"
+      },
+      "recommendationId": {
+        "_eq": "fcb35573-ed36-4282-b8eb-d4f16d84f289"
+      },
+      "parentId": {
+        "_is_null": true
+      }
+    },
+    "offset": 15,
+    "limit": 15
+  },
+  "query": "..."
+}
+---
+query CommentsQuery($topLevelCommentsWhere: recommendation_comments_bool_exp!, $limit: Int!, $offset: Int!) {
+  comments: recommendation_comments(
+    limit: $limit
+    offset: $offset
+    where: $topLevelCommentsWhere
+    order_by: [{publishedAt: asc}, {id: asc}]
+  ) {
+    ...CommentFieldsFragment  
+  }
+}
+
+
+fragment ProfileFieldsFragment on profiles {
+  username
+}
+
+fragment CommentFieldsFragment on recommendation_comments {
+  id
+  profileId
+  postId: recommendationId
+  content
+  createdAt
+  deletedAt
+  publishedAt
+  parentId
+
+  profile {
+    ...ProfileFieldsFragment
+    
+  }
+}

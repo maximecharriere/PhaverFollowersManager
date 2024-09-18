@@ -1,0 +1,170 @@
+{
+    "data": {
+        "setFollow": {
+            "__typename": "setFollowOutput",
+            "farcasterQuota": {
+                "__typename": "QuotaFollows",
+                "available": 497,
+                "maximum": 500,
+                "monthlyAvailable": 4825,
+                "monthlyMaximum": 5000,
+                "quotaType": "farcaster"
+            },
+            "lensQuota": {
+                "__typename": "QuotaFollows",
+                "available": 19,
+                "maximum": 20,
+                "monthlyAvailable": -85,
+                "monthlyMaximum": 100,
+                "quotaType": "lens"
+            },
+            "phaverQuota": {
+                "__typename": "QuotaFollows",
+                "available": 497,
+                "maximum": 500,
+                "monthlyAvailable": 4825,
+                "monthlyMaximum": 5000,
+                "quotaType": "phaver"
+            },
+            "profile": {
+                "__typename": "profiles",
+                "bAt": null,
+                "badge": null,
+                "ccProfiles": [],
+                "coverImage": null,
+                "createdAt": "2022-05-18T16:54:59.969004+00:00",
+                "credLevel": 4,
+                "description": "Binance perps trader and shit poster.",
+                "discord": "",
+                "facebook": "",
+                "farcasterProfile": {
+                    "__typename": "farcaster_profiles",
+                    "displayName": "Himaanshu Bhatt",
+                    "isUserFollowing": true,
+                    "name": "gyrdsvjuu45678",
+                    "tokenId": "611123"
+                },
+                "id": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+                "image": {
+                    "__typename": "images",
+                    "blurhash": "UFC?1DYO%fM|}FH@R.bv%f-ApbkqpI$jS#M|",
+                    "bucket": "phaver-assets",
+                    "contentType": "image/jpeg",
+                    "createdAt": "2024-04-29T22:47:03.448051+00:00",
+                    "filename": "2192f36e99e77a2b9f86ad14fbdafa5e",
+                    "height": 1440,
+                    "id": "cda3bd4f-035c-49b4-8f02-dce45425c466",
+                    "pages": null,
+                    "profileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+                    "size": 176270,
+                    "sourceUrl": null,
+                    "status": "fulfilled",
+                    "updatedAt": "2024-04-29T22:47:03.448051+00:00",
+                    "width": 1440
+                },
+                "instagram": "",
+                "isUserFollowing": true,
+                "lensProfile": {
+                    "__typename": "lens_profiles",
+                    "followModule": "0x0000000000000000000000000000000000000000",
+                    "id": "d9b79b81-bc2f-462f-8272-8e72a8154bd4",
+                    "image": {
+                        "__typename": "images",
+                        "blurhash": "UCELjJ%#yXoM{PrDtROr~Cv$S~o|It?G%LR+",
+                        "bucket": "phaver-assets",
+                        "contentType": "image/jpeg",
+                        "createdAt": "2022-12-19T15:49:08.938645+00:00",
+                        "filename": "f5c66d7f25ffe99f548736d80a1cee15",
+                        "height": 1792,
+                        "id": "3bc5ccc3-1f1d-4d09-a74a-94ab7c3a84fb",
+                        "pages": null,
+                        "profileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+                        "size": 335023,
+                        "sourceUrl": null,
+                        "status": "fulfilled",
+                        "updatedAt": "2022-12-22T13:28:18.196651+00:00",
+                        "width": 960
+                    },
+                    "isFollowPending": false,
+                    "isUserFollowing": false,
+                    "lensHandle": "himaanshu.lens",
+                    "lensProfileId": "106658",
+                    "ownerAddress": "0xe605E713731e0d66Cae562E4073C23B3F4e92381",
+                    "status": "fulfilled",
+                    "txId": null
+                },
+                "linkedin": "",
+                "name": "Squid HD",
+                "nft": {
+                    "__typename": "connected_nfts",
+                    "chainId": 137,
+                    "contractAddress": "0x86d1ff5a19854865c2a9b3fc22ae49f9b370c3c0",
+                    "createdAt": "2024-07-26T10:27:01.745008+00:00",
+                    "id": "2900f6fb-e2dd-4030-a915-0a2010c1a4b7",
+                    "image": {
+                        "__typename": "images",
+                        "blurhash": "UHJk[jw^zTJ5%QkW^*xc.-t8%2rq?tR4MbR%",
+                        "bucket": "phaver-assets",
+                        "contentType": "image/png",
+                        "createdAt": "2024-07-26T10:27:01.620437+00:00",
+                        "filename": "26ad23d9badd857b2338c3ae47cdbf02",
+                        "height": 4000,
+                        "id": "a48493a2-5353-40c0-95f9-32450cb068e5",
+                        "pages": null,
+                        "profileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+                        "size": 1467413,
+                        "sourceUrl": null,
+                        "status": "fulfilled",
+                        "updatedAt": "2024-07-26T10:27:01.620437+00:00",
+                        "width": 4000
+                    },
+                    "nftName": "Phaver-Up: Genesis Edition",
+                    "nftTokenId": "1182",
+                    "nft_description": "The most rewarding NFT in Web3 Social, Phaver-Ups launch the on-chain era of Phaver’s economy.",
+                    "profileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+                    "updatedAt": "2024-07-27T12:48:49.700782+00:00",
+                    "verifiedNftProject": {
+                        "__typename": "verified_nft_projects",
+                        "id": 149,
+                        "image": {
+                            "__typename": "images",
+                            "blurhash": "UcM=XRoe$%xY~kj@kBoeV@oKR+WV,@oLRlja",
+                            "bucket": "phaver-assets",
+                            "contentType": "image/png",
+                            "createdAt": "2024-04-03T15:46:49.542421+00:00",
+                            "filename": "df3d74528ef503f293525f8e5efe4b3d",
+                            "height": 1000,
+                            "id": "aeb1bfe8-3475-4ebc-ad85-22d2d423e6aa",
+                            "pages": null,
+                            "profileId": "0",
+                            "size": 134417,
+                            "sourceUrl": null,
+                            "status": "fulfilled",
+                            "updatedAt": "2024-04-03T15:46:49.542421+00:00",
+                            "width": 1000
+                        }
+                    }
+                },
+                "pinterest": "",
+                "profileAggregates": {
+                    "__typename": "profile_aggregates",
+                    "followerCount": 63,
+                    "followingCount": 30
+                },
+                "snapchat": "",
+                "telegram": "",
+                "tiktok": "",
+                "timeoutUntil": null,
+                "twitter": "fatsquidtrader",
+                "updatedAt": "2024-07-26T12:37:32.877996+00:00",
+                "username": "SquidHD",
+                "verification": null,
+                "website": "",
+                "xmtpWallet": "0xe605e713731e0d66cae562e4073c23b3f4e92381",
+                "youtube": ""
+            },
+            "profileId": "qM4hvVApYdRodNsV8FMc8eQC7Lv1",
+            "status": "ok"
+        }
+    }
+}

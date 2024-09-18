@@ -1,0 +1,5 @@
+query PhaverPointsQuery($profileId: String!) {
+  phaverPoints: eventPoint(accountId: $profileId) {
+    phaverPointsCurrent: eventPointsCurrent
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "operationName": "ProfileAggregatesQuery",
+  "variables": {
+    "profileId": "BcJCjBLonUSugxYfZmewsLNSVyz2"
+  },
+  "query": "..."
+}
+---
+query ProfileAggregatesQuery($profileId: String!) {
+  profile: profiles_by_pk(id: $profileId) {
+    profileAggregates {
+      followingCount
+      followerCount
+      __typename
+    }
+    __typename
+  }
+}

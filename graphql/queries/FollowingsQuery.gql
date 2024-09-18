@@ -1,0 +1,13 @@
+query FollowingsQuery($profileId: String!, $limit: Int!, $offset: Int!) {
+  followings: followers(
+    limit: $limit
+    offset: $offset
+    where: {
+      profileId: { _eq: $profileId }
+      followedProfile: { bAt: { _is_null: true } }
+    }
+    order_by: { createdAt: desc }
+  ) {
+    ...FollowerFieldsFragment
+  }
+}
