@@ -1,0 +1,19 @@
+query QuotaQuery($accountId: String!) {
+  quota(accountId: $accountId) {
+    lensFollows {
+      ...QuotaFollowsFragment
+    }
+    phaverFollows {
+      ...QuotaFollowsFragment
+    }
+    lensApiMomoka {
+      ...QuotaLensApiFragment
+    }
+    lensApiOnchain {
+      ...QuotaLensApiFragment
+    }
+    lensPublications {
+      ...QuotaLensPublicationFragment
+    }
+  }
+}

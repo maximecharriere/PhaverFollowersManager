@@ -1,0 +1,5 @@
+query ProfileQuery($profileId: String!) {
+  profile: profiles_by_pk(id: $profileId) {
+    ...ProfileFieldsFragment
+  }
+}

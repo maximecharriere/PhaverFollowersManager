@@ -1,0 +1,14 @@
+mutation SetFollow($follow: Boolean!, $profileId: String!, $followType: FollowType) {
+  setFollow(follow: $follow, profileId: $profileId, followType: $followType) {
+    farcasterQuota {
+      ...QuotaFollowsFragment
+    }
+    lensQuota {
+      ...QuotaFollowsFragment
+    }
+    phaverQuota {
+      ...QuotaFollowsFragment
+    }
+    status
+  }
+}

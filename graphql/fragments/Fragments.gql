@@ -38,3 +38,25 @@ fragment FollowerFieldsFragment on followers {
   }
   createdAt
 }
+
+fragment QuotaFollowsFragment on QuotaFollows {
+  quotaType
+  available
+  maximum
+  monthlyAvailable
+  monthlyMaximum
+}
+
+fragment QuotaLensApiFragment on QuotaLensApi {
+  quotaType
+  dailyAvailable
+  dailyMaximum
+  hourlyAvailable
+  hourlyMaximum
+}
+
+fragment QuotaLensPublicationFragment on QuotaPublications {
+  available
+  maximum
+  quotaType
+}
