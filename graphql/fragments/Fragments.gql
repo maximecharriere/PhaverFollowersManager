@@ -1,6 +1,7 @@
 fragment LensProfileFieldsFragment on lens_profiles {
   lensHandle
   isUserFollowing
+  isFollowPending
   createdAt
 }
 
