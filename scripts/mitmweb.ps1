@@ -1,0 +1,1 @@
+mitmweb --set web_columns="timestamp" --set web_columns="tls" --set web_columns="icon" --set web_columns="path" --set web_columns="method" --set web_columns="status" --set web_columns="size" --set web_columns="time"

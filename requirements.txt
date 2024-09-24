@@ -1,4 +1,6 @@
-requests
-pandas
-ipykernel
-xlsxwriter
+ipykernel==6.29.5
+ipython==8.27.0
+numpy==2.1.1
+pandas==2.2.2
+python-dotenv==1.0.1
+requests==2.32.3
