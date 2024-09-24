@@ -1,0 +1,334 @@
+"""
+{
+  "operationName": "CreatePostMutation",
+  "variables": {
+    "post": {
+      "communityId": "b94e4297-7d8e-4ffe-ba15-99e308f188aa",
+      "description": "In 16 hours, your $SOCIAL will be airdropped. What to do next?\nOnce you've got your $SOCIAL, I suggest you stake them on ByBit to participate in a pool of 90,000,000 $SOCIAL!\nFind out more here: https://www.bybit.com/en/trade/spot/launchpool?ref=02GVPW8\n\nYou can stake your SOCIAL, MNT and USDT to receive SOCIAL in a month.",
+      "imageIds": [
+        "37fb02c2-f714-4b9d-9dae-ce739ca8cb35"
+      ],
+      "isPrivate": false,
+      "pointCost": 500
+    },
+    "link": null,
+    "broadcastToLens": true,
+    "broadcastToFarcaster": true,
+    "farcasterChannelId": "phaver"
+  },
+  "query": "..."
+}
+"""
+mutation CreatePostMutation($post: PostInput!, $link: LinkInput, $broadcastToLens: Boolean!, $broadcastToFarcaster: Boolean!, $farcasterChannelId: String, $videoId: String, $mirroredPostId: String) {
+  createPost(
+    post: $post
+    link: $link
+    broadcastToLens: $broadcastToLens
+    videoId: $videoId
+    mirroredPostId: $mirroredPostId
+    broadcastToFarcaster: $broadcastToFarcaster
+    farcasterChannelId: $farcasterChannelId
+  ) {
+    status
+    postId
+    post {
+      ...PostFieldsFragment
+      __typename
+    }
+    farcasterError
+    __typename
+  }
+}
+fragment TagFieldsProfileFragment on profiles {
+  id
+  username
+  name
+  farcasterProfile {
+    tokenId
+    name
+    displayName
+    __typename
+  }
+  lensProfile {
+    id
+    lensHandle
+    __typename
+  }
+  __typename
+}
+fragment PostProfileTagFieldsFragment on post_profile_tags {
+  id
+  postId
+  extFcName
+  matchedText
+  originalText
+  profile {
+    ...TagFieldsProfileFragment
+    __typename
+  }
+  __typename
+}
+fragment CommunityBasicFieldsFragment on communities {
+  id
+  name
+  isPrivate
+  isModerator
+  __typename
+}
+fragment ImageFieldsFragment on images {
+  id
+  profileId
+  size
+  bucket
+  createdAt
+  updatedAt
+  filename
+  width
+  height
+  blurhash
+  contentType
+  pages
+  sourceUrl
+  status
+  __typename
+}
+fragment LensProfileFieldsFragment on lens_profiles {
+  id
+  lensProfileId
+  lensHandle
+  status
+  txId
+  ownerAddress
+  followModule
+  isUserFollowing
+  isFollowPending
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  __typename
+}
+fragment NftFieldsFragment on connected_nfts {
+  id
+  profileId
+  chainId
+  nftName
+  nft_description
+  nftTokenId
+  contractAddress
+  createdAt
+  updatedAt
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  verifiedNftProject {
+    id
+    image {
+      ...ImageFieldsFragment
+      __typename
+    }
+    __typename
+  }
+  __typename
+}
+fragment FarcasterProfileFragment on farcaster_profiles {
+  tokenId
+  displayName
+  name
+  isUserFollowing
+  __typename
+}
+fragment ProfileFieldsFragment on profiles {
+  id
+  name
+  username
+  description
+  credLevel
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  createdAt
+  updatedAt
+  lensProfile {
+    ...LensProfileFieldsFragment
+    __typename
+  }
+  timeoutUntil
+  badge
+  verification
+  nft {
+    ...NftFieldsFragment
+    __typename
+  }
+  bAt
+  xmtpWallet
+  farcasterProfile {
+    ...FarcasterProfileFragment
+    __typename
+  }
+  isUserFollowing
+  __typename
+}
+fragment VideoFragment on videos {
+  createdAt
+  dash
+  duration
+  errorReasonCode
+  errorReasonText
+  height
+  hls
+  id
+  mimeType
+  preview
+  readyToStream
+  size
+  sourceUrl
+  state
+  thumbnail
+  uid
+  updatedAt
+  width
+  processingProgress
+  __typename
+}
+fragment FrameFragment on frames {
+  id
+  url
+  inputText
+  postUrl
+  imageUrl
+  imageAspectRatio
+  accepts
+  isFcFrame
+  isOpenFrame
+  buttons {
+    postUrl
+    target
+    idx
+    label
+    action
+    __typename
+  }
+  __typename
+}
+fragment LinkFieldsFragment on links {
+  id
+  postId: recommendationId
+  description
+  imageId
+  title
+  url
+  createdAt
+  updatedAt
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  __typename
+}
+fragment MediaFragment on medias {
+  id
+  audioId
+  image {
+    ...ImageFieldsFragment
+    __typename
+  }
+  video {
+    ...VideoFragment
+    __typename
+  }
+  frame {
+    ...FrameFragment
+    __typename
+  }
+  link {
+    ...LinkFieldsFragment
+    __typename
+  }
+  __typename
+}
+fragment LensPublicationBasicFieldsFragment on lens_posts {
+  id
+  lensPubId
+  status
+  lensDaId
+  __typename
+}
+fragment LensPublicationFieldsFragment on lens_posts {
+  ...LensPublicationBasicFieldsFragment
+  lensProfileId
+  collectModule
+  collectModuleReturnData
+  isCollected
+  __typename
+}
+fragment FarcasterCastFieldsFragment on farcaster_casts {
+  id
+  fid
+  status
+  __typename
+}
+fragment PostAggregateFieldsFragment on recommendations {
+  postAggregates {
+    id
+    collects
+    mirrors
+    dailyStakes
+    votes
+    comments
+    __typename
+  }
+  __typename
+}
+fragment PostBasicFieldsFragment on recommendations {
+  id
+  description
+  createdAt
+  deletedAt
+  profileId
+  publishedAt
+  userHasStaked
+  userVoteScore
+  pointCost
+  isFarcasterRecast
+  language
+  status
+  profileTags {
+    ...PostProfileTagFieldsFragment
+    __typename
+  }
+  pinnedSocialAt
+  pinnedOtherAt
+  community {
+    ...CommunityBasicFieldsFragment
+    __typename
+  }
+  profile {
+    ...ProfileFieldsFragment
+    __typename
+  }
+  medias {
+    ...MediaFragment
+    __typename
+  }
+  lensPost {
+    ...LensPublicationFieldsFragment
+    __typename
+  }
+  farcasterCast {
+    ...FarcasterCastFieldsFragment
+    __typename
+  }
+  ...PostAggregateFieldsFragment
+  __typename
+}
+fragment PostFieldsFragment on recommendations {
+  ...PostBasicFieldsFragment
+  mirroredPost: postPointed {
+    ...PostBasicFieldsFragment
+    __typename
+  }
+  __typename
+}
