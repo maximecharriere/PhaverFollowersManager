@@ -7,6 +7,12 @@ import requests
 
 from graphql_queries import *
 
+class UnfollowError(Exception):
+    def __init__(self, message, stopProcess):            
+        # Call the base class constructor with the parameters it needs
+        super().__init__(message)
+            
+        self.stopProcess = stopProcess
     
 def request_access_token():
     FIREBASE_TOKEN_URL = os.getenv("FIREBASE_API_URL") + os.getenv("FIREBASE_API_KEY")
@@ -196,7 +202,7 @@ def request_quota(profile_id, access_token):
 
 def unfollow_user(profile_id, unfollowed_profile_id, network, access_token):
     if network not in ['phaver', 'lens', 'farcaster', 'all']:
-        raise ValueError("Invalid network. Must be either 'phaver', 'lens', 'farcaster', or 'all'")
+        raise ValueError(f"Invalid network '{network}' : Must be either 'phaver', 'lens', 'farcaster', or 'all'")
     if network == 'all':
         networks = ['phaver', 'lens', 'farcaster']
     else:
@@ -205,7 +211,7 @@ def unfollow_user(profile_id, unfollowed_profile_id, network, access_token):
     profile = request_profile(unfollowed_profile_id, access_token)
 
     if profile is None:
-        raise ValueError("Profile not found")
+        raise ValueError(f"Profile not found")
     
     # check if the user is not already unfollowing the profile on Phaver
     if 'phaver' in networks and not profile.get('isUserFollowing', False):
@@ -220,7 +226,7 @@ def unfollow_user(profile_id, unfollowed_profile_id, network, access_token):
         networks.remove('farcaster')
 
     if len(networks) == 0:
-        return True
+        return
 
     for network in networks:
         data = phaver_graphql_api_request(
@@ -234,22 +240,21 @@ def unfollow_user(profile_id, unfollowed_profile_id, network, access_token):
         )
 
         if data['data']['setFollow']['status'] != 'ok':
-            raise Exception(f"Failed to unfollow user on {network}")
+            raise UnfollowError(f"Failed to unfollow user on {network}.\nResponse data : {json.dumps(data, indent=4)}\nProfile : {json.dumps(profile, indent=4)}", False)
     
     #Check that the profile is not being followed on any network
     profile = request_profile(unfollowed_profile_id, access_token)
 
     if profile.get('isUserFollowing', True):
-        raise Exception("Failed to unfollow user on Phaver. Unkown error.\nprofile: " + json.dumps(profile, indent=4))
+        raise UnfollowError(f"Failed to unfollow user on Phaver.\nResponse data : {json.dumps(data, indent=4)}\nProfile : {json.dumps(profile, indent=4)}", False)
     if profile.get('lensProfile') and profile['lensProfile'].get('isUserFollowing', True):
         if not profile['lensProfile'].get('isFollowPending', False): # Lens takes some time to update the isUserFollowing field, so we need to check if the follow is pending. If it is, we can assume the unfollow was successful.
             quota = request_quota(profile_id, access_token)
             limit = min(quota['lensApiOnchain']['dailyAvailable'], quota['lensApiOnchain']['hourlyAvailable'])
             if limit <= 0:
-                raise Exception("Failed to unfollow user on Lens. Onchain Lens API limit reached.\nprofile: " + json.dumps(profile, indent=4))
+                raise UnfollowError(f"Failed to unfollow user on Lens. Onchain Lens API limit reached.\nResponse data : {json.dumps(data, indent=4)}\nProfile : {json.dumps(profile, indent=4)}\nQuota : {json.dumps(quota, indent=4)}", True)
             else:
-                raise Exception("Failed to unfollow user on Lens. Unkown error.\nprofile: " + json.dumps(profile, indent=4))
+                raise UnfollowError(f"Failed to unfollow user on Lens. Unkown error.\nResponse data : {json.dumps(data, indent=4)}\nProfile : {json.dumps(profile, indent=4)}\nQuota : {json.dumps(quota, indent=4)}", False)
     if profile.get('farcasterProfile') and profile['farcasterProfile'].get('isUserFollowing', True):
-        raise Exception("Failed to unfollow user on Farcaster. Unkown error.\nprofile: " + json.dumps(profile, indent=4))
-        
-    return True
+        raise UnfollowError(f"Failed to unfollow user on Farcaster. Unkown error.\nResponse data : {json.dumps(data, indent=4)}\nProfile : {json.dumps(profile, indent=4)}", False)
+
