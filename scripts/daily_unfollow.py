@@ -30,8 +30,8 @@ print(f"Loaded {len(followings_df)} followings.")
 print("\nFilter profiles to unfollow")
 print("-------------------------")
 profiles_to_unfollow_df = followings_df[
-    (followings_df['followerCount'] < 2000) & 
-    (followings_df['credLevel'] < 2) &
+    (followings_df['followerCount'] < 3000) & 
+    (followings_df['credLevel'] < 3) &
     (followings_df['badge'].isnull()) &
     (followings_df['verification'].isnull()) &
     # (followings_df['lensProfile.isUserFollowing'] != True) &
