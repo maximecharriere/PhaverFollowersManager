@@ -1,3 +1,7 @@
+## Script to unfollow profiles on a daily basis until my followings list is cleaned up.
+## Each days, if the lens quotas is reached, the script will stop and continue the next day.
+## The script must be run with a cron job to unfollow profiles on a daily basis.
+
 import pandas as pd
 import os
 from dotenv import load_dotenv
